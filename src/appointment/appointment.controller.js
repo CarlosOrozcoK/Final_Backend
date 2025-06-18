@@ -1,51 +1,54 @@
+// src/appointments/appointment.controller.js
 import Appointment from './appointment.model.js';
 import Doctor from '../doctors/doctor.model.js';
 
 export const createAppointment = async (req, res) => {
   try {
-    const patientId = req.uid;  // 👈 Obtenemos paciente desde el token validado
+    const patientId = req.uid;               // paciente desde JWT
     const { doctorId, date } = req.body;
 
     if (!doctorId || !date) {
       return res.status(400).json({ message: 'doctorId and date are required' });
     }
 
+    // 1️⃣  Obtener doctor y su precio
     const doctor = await Doctor.findById(doctorId);
-    if (!doctor) return res.status(404).json({ message: 'Doctor not found' });
+    if (!doctor)
+      return res.status(404).json({ message: 'Doctor not found' });
 
-    // Verificar disponibilidad del doctor para la fecha
-    const existing = await Appointment.findOne({ doctor: doctorId, date: new Date(date) });
-    if (existing) {
+    // 2️⃣  Verificar disponibilidad (misma fecha/hora exacta)
+    const clash = await Appointment.findOne({ doctor: doctorId, date: new Date(date) });
+    if (clash)
       return res.status(400).json({ message: 'Doctor is not available at this date/time' });
-    }
 
+    // 3️⃣  Crear la cita con el precio del doctor
     const appointment = new Appointment({
       patient: patientId,
       doctor: doctorId,
-      date
+      date,
+      price: doctor.consultationPrice        // 💲 precio copiado
     });
 
     await appointment.save();
 
-    return res.status(201).json({ message: 'Appointment created', appointment });
-
+    res.status(201).json({ message: 'Appointment created', appointment });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Server error', error: error.message });
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
 
 export const listAppointments = async (req, res) => {
   try {
-    const patientId = req.uid; // Paciente autenticado
+    const patientId = req.uid;
 
     const appointments = await Appointment.find({ patient: patientId })
-      .populate('doctor', 'name email specialization') // Información básica del doctor
-      .sort({ date: 1 }); // Ordenar por fecha ascendente
+      .populate('doctor', 'name email specialization consultationPrice')
+      .sort({ date: 1 });
 
-    return res.json({ appointments });
+    res.json({ appointments });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Server error', error: error.message });
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };

@@ -1,80 +1,72 @@
-import User from '../doctors/doctor.model.js';
-import { hash as hashPassword } from 'argon2';
+import Doctor from '../doctors/doctor.model.js';
 
-// 📄 GET: Listar todos los usuarios
-export const listarUsuarios = async (req, res) => {
+// GET: List all active doctors
+export const listDoctors = async (req, res) => {
   try {
-    const usuarios = await User.find();
-    res.json({ success: true, usuarios });
+    const doctors = await Doctor.find({ status: true }).select('-__v');
+    res.json({ success: true, doctors });
   } catch (error) {
-    res.status(500).json({ success: false, msg: 'Error al obtener los usuarios', error });
+    res.status(500).json({ success: false, msg: 'Error fetching doctors', error });
   }
 };
 
-export const crearUsuario = async (req, res) => {
+// POST: Create doctor
+export const createDoctor = async (req, res) => {
   try {
-    const { name, phone, email, specialization, role } = req.body;
+    const { name, phone, email, specialization, consultationPrice } = req.body;
 
-    const existe = await User.findOne({ email });
-    if (existe) {
-      return res.status(400).json({ success: false, msg: 'Ya existe un usuario con ese correo' });
+    if (!consultationPrice) {
+      return res.status(400).json({ success: false, msg: 'consultationPrice is required' });
     }
 
-    const hashedPassword = await hashPassword(phone); // O usa otro valor para la contraseña
+    if (await Doctor.findOne({ email })) {
+      return res.status(400).json({ success: false, msg: 'Email already in use' });
+    }
 
-    const nuevoUsuario = new User({
+    const doctor = new Doctor({
       name,
       phone,
       email,
       specialization,
-      role,
-      password: hashedPassword  // Aunque no lo tienes en el schema, por seguridad podrías agregarlo
+      consultationPrice     // ← requerido
     });
 
-    await nuevoUsuario.save();
-    res.status(201).json({ success: true, usuario: nuevoUsuario });
+    await doctor.save();
+    res.status(201).json({ success: true, doctor });
   } catch (error) {
-    res.status(500).json({ success: false, msg: 'Error al crear el usuario', error });
+    res.status(500).json({ success: false, msg: 'Error creating doctor', error });
   }
 };
 
-// 🔄 PUT: Actualizar usuario
-export const actualizarUsuario = async (req, res) => {
+// PUT: Update doctor
+export const updateDoctor = async (req, res) => {
   try {
     const { id } = req.params;
-    const { email, phone, ...data } = req.body;
+    const { email, ...data } = req.body;
 
-    const usuario = await User.findById(id);
-    if (!usuario) {
-      return res.status(404).json({ success: false, msg: 'Usuario no encontrado' });
+    const doctor = await Doctor.findById(id);
+    if (!doctor) return res.status(404).json({ success: false, msg: 'Doctor not found' });
+
+    if (email && email !== doctor.email && await Doctor.findOne({ email })) {
+      return res.status(400).json({ success: false, msg: 'Email already in use' });
     }
 
-    if (email && email !== usuario.email) {
-      const existeEmail = await User.findOne({ email });
-      if (existeEmail) {
-        return res.status(400).json({ success: false, msg: 'Ese correo ya está en uso' });
-      }
-    }
-
-    const actualizado = await User.findByIdAndUpdate(id, { ...data, email, phone }, { new: true });
-    res.json({ success: true, usuario: actualizado });
+    const updated = await Doctor.findByIdAndUpdate(id, { ...data, email }, { new: true });
+    res.json({ success: true, doctor: updated });
   } catch (error) {
-    res.status(500).json({ success: false, msg: 'Error al actualizar el usuario', error });
+    res.status(500).json({ success: false, msg: 'Error updating doctor', error });
   }
 };
 
-// ❌ DELETE: Eliminar usuario (soft delete)
-export const eliminarUsuario = async (req, res) => {
+// DELETE: Soft delete
+export const deleteDoctor = async (req, res) => {
   try {
     const { id } = req.params;
-    const eliminado = await User.findByIdAndUpdate(id, { status: false }, { new: true });
+    const deleted = await Doctor.findByIdAndUpdate(id, { status: false }, { new: true });
+    if (!deleted) return res.status(404).json({ success: false, msg: 'Doctor not found' });
 
-    if (!eliminado) {
-      return res.status(404).json({ success: false, msg: 'Usuario no encontrado' });
-    }
-
-    res.json({ success: true, msg: 'Usuario desactivado', usuario: eliminado });
+    res.json({ success: true, msg: 'Doctor deactivated', doctor: deleted });
   } catch (error) {
-    res.status(500).json({ success: false, msg: 'Error al eliminar el usuario', error });
+    res.status(500).json({ success: false, msg: 'Error deleting doctor', error });
   }
 };
