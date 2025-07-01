@@ -27,9 +27,12 @@ const appointmentSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true,
-    default: 0 
+    default: 0
+  },
+  paidAt: {    
+    type: Date,
+    default: null
   }
-  
 });
 
 export default mongoose.model('Appointment', appointmentSchema);

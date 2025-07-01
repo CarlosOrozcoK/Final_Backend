@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "fc19cc4b-dc88-4381-a155-08e7d5c99fbd",
+		"name": "DOCTORS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42798822"
+	},
+	"item": [
+		{
+			"name": "createDoctor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dr. Simi\",\r\n  \"phone\": \"555-4321\",\r\n  \"email\": \"drsimi@example.com\",\r\n  \"specialization\": \"General\",\r\n  \"consultationPrice\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/nuevoDoc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors",
+						"nuevoDoc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDoctor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateDoctor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dr. Malco Chacon II\",\r\n  \"phone\": \"555-8765\",\r\n  \"email\": \"drmalcochaconii@example.com\",\r\n  \"specialization\": \"Cardiology\",\r\n  \"consultationPrice\": 120\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/6863fe5212608e69e247e539",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors",
+						"6863fe5212608e69e247e539"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteDoctor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dr. Malco Chacon II\",\r\n  \"phone\": \"555-8765\",\r\n  \"email\": \"drmalcochaconii@example.com\",\r\n  \"specialization\": \"Cardiology\",\r\n  \"consultationPrice\": 120\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/6863fea712608e69e247e541",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors",
+						"6863fea712608e69e247e541"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

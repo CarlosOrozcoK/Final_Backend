@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "6953ecea-977c-4ab1-923f-b1043e4b6f38",
+		"name": "USERS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42798822"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rafael Baltazar\",\r\n  \"username\": \"rbaltazar\",\r\n  \"dpi\": \"2525789450101\",\r\n  \"address\": \"Abbey Road, Ciudad\",\r\n  \"phone\": \"36770123\",\r\n  \"email\": \"rbaltazar@example.com\",\r\n  \"password\": \"password123456\",\r\n  \"role\": \"CLIENT_ROLE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Luis Choc\",\r\n  \"username\": \"lchoc\",\r\n  \"dpi\": \"2525159150101\",\r\n  \"address\": \"Calle Elm, Ciudad\",\r\n  \"phone\": \"36771234\",\r\n  \"email\": \"lchoc@example.com\",\r\n  \"password\": \"password12345\",\r\n  \"role\": \"CLIENT_ROLE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rafael Baltazar 2\",\r\n  \"username\": \"rbaltazar\",\r\n  \"dpi\": \"2525789450101\",\r\n  \"address\": \"Abbey Road, Ciudad\",\r\n  \"phone\": \"36777763\",\r\n  \"email\": \"rbaltazar@example.com\",\r\n  \"password\": \"nuevopassword123456\",\r\n  \"role\": \"CLIENT_ROLE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/users/6863fc3e9ac70bced7cd9355",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"users",
+						"6863fc3e9ac70bced7cd9355"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Rafael Baltazar 2\",\r\n  \"username\": \"rbaltazar\",\r\n  \"dpi\": \"2525789450101\",\r\n  \"address\": \"Abbey Road, Ciudad\",\r\n  \"phone\": \"36777763\",\r\n  \"email\": \"rbaltazar@example.com\",\r\n  \"password\": \"nuevopassword123456\",\r\n  \"role\": \"CLIENT_ROLE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/users/6863fbed9ac70bced7cd934e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"users",
+						"6863fbed9ac70bced7cd934e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

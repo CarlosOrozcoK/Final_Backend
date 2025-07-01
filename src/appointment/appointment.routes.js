@@ -1,10 +1,16 @@
 import { Router } from 'express';
-import { createAppointment, listAppointments } from './appointment.controller.js';
-import { validateJWT } from '../middlewares/validate-jwt.js';  // ruta a tu middleware JWT
+import { createAppointment, listAppointments, completeAppointment } from './appointment.controller.js';
+import { validateJWT } from '../middlewares/validate-jwt.js';  // middleware para validar JWT
 
 const router = Router();
 
-router.post('/nuevaCita', validateJWT, createAppointment);  // Aquí validamos el token para extraer paciente
-router.get('/', listAppointments);
+// Crear una nueva cita
+router.post('/nuevaCita', validateJWT, createAppointment);
+
+// Obtener las citas del paciente (por token)
+router.get('/', validateJWT, listAppointments);
+
+// Completar una cita (cuando el pago se haya hecho)
+router.put('/completar/:id', validateJWT, completeAppointment);
 
 export default router;

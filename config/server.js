@@ -1,4 +1,4 @@
-'use strict'; // This is good practice but not strictly necessary for ES modules
+'use strict';
 
 import dotenv from 'dotenv';
 import express from 'express';
@@ -9,8 +9,10 @@ import rateLimit from 'express-rate-limit';
 import { dbConnection } from './mongo.js'; 
 import authRoutes from '../src/auth/auth.routes.js'; 
 import userRoutes from '../src/users/user.routes.js';
-import doctorRoutes from '../src/doctors/doctor.routes.js' 
-import appointmentRoutes from '../src/appointment/appointment.routes.js'
+import doctorRoutes from '../src/doctors/doctor.routes.js'; 
+import appointmentRoutes from '../src/appointment/appointment.routes.js'; 
+import paymentRoutes from '../src/payments/payment.routes.js';
+import invoiceRoutes from '../src/invoices/invoice.routes.js';
 
 dotenv.config();
 
@@ -28,36 +30,38 @@ const middlewares = (app) => {
  app.use(helmet());
  app.use(morgan('dev'));
  app.use(limiter); 
-}
+};
 
 const routes = (app) => {
-app.use("/Final_backend/v1/auth", authRoutes);
-app.use("/Final_backend/v1/users", userRoutes); 
-app.use("/Final_backend/v1/doctors", doctorRoutes); 
-app.use("/Final_backend/v1/appointments", appointmentRoutes); 
-}
+  app.use("/Final_backend/v1/auth", authRoutes);
+  app.use("/Final_backend/v1/users", userRoutes); 
+  app.use("/Final_backend/v1/doctors", doctorRoutes); 
+  app.use("/Final_backend/v1/appointments", appointmentRoutes); 
+  app.use("/Final_backend/v1/payments", paymentRoutes);
+  app.use("/Final_backend/v1/invoices", invoiceRoutes);
+};
 
 const conectarDB = async () => {
  try {
- await dbConnection();
- console.log('Successfully connected to database!'); // Corrected typo
-} catch (error) {
-console.log('Error connecting to database!');
-process.exit(1);
-}
-}
+   await dbConnection();
+   console.log('Successfully connected to database!');
+ } catch (error) {
+   console.log('Error connecting to database!');
+   process.exit(1);
+ }
+};
 
 export const initServer = async () => {
-const app = express();
- const port = process.env.PORT || 3000;
+  const app = express();
+  const port = process.env.PORT || 3001;
 
-try {
- middlewares(app);
- await conectarDB();
- routes(app);
- console.log(`Server running on port ${port}!`);
- app.listen(port);
- } catch (err) {
- console.log(`Server init failed: ${err}!`);
- }
-}
+  try {
+    middlewares(app);
+    await conectarDB();
+    routes(app);
+    console.log(`Server running on port ${port}!`);
+    app.listen(port);
+  } catch (err) {
+    console.log(`Server init failed: ${err}!`);
+  }
+};
