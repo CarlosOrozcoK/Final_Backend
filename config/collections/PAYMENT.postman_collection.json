@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "85f4be01-cb6c-49c2-98fd-ae9b420e3aa5",
+		"_postman_id": "b52aa10f-6cf8-40b7-8b67-3cbf878bcf7d",
 		"name": "PAYMENT",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42798822"
@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODY0NDIsImV4cCI6MTc1MTM5MDA0Mn0.8u5B2lVapDzzQUzn0yb7Lq3hFEjJfS7BT07KJ8bTU58",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"appointmentId\": \"686409171fd02694e999aa46\",\r\n  \"amount\": 150,\r\n  \"method\": \"card\",\r\n  \"transactionId\": \"txn12345\"\r\n}",
+					"raw": "{\r\n  \"appointmentId\": \"68645e83f6a259008c5d92b4\",\r\n  \"amount\": 200,\r\n  \"method\": \"card\",\r\n  \"transactionId\": \"txn123456789\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -52,13 +52,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODY0NDIsImV4cCI6MTc1MTM5MDA0Mn0.8u5B2lVapDzzQUzn0yb7Lq3hFEjJfS7BT07KJ8bTU58",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"appointmentId\": \"686409171fd02694e999aa46\",\r\n  \"amount\": 150,\r\n  \"method\": \"card\",\r\n  \"transactionId\": \"txn12345\"\r\n}",
+					"raw": "{\r\n  \"appointmentId\": \"686457dc0d16c21cc597a485\",\r\n  \"amount\": 150,\r\n  \"method\": \"card\",\r\n  \"transactionId\": \"txn12345\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -66,7 +66,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/Final_backend/v1/payments/686409171fd02694e999aa46",
+					"raw": "http://localhost:3000/Final_backend/v1/payments/686457dc0d16c21cc597a485",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -76,7 +76,7 @@
 						"Final_backend",
 						"v1",
 						"payments",
-						"686409171fd02694e999aa46"
+						"686457dc0d16c21cc597a485"
 					]
 				}
 			},
@@ -89,7 +89,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODY0NDIsImV4cCI6MTc1MTM5MDA0Mn0.8u5B2lVapDzzQUzn0yb7Lq3hFEjJfS7BT07KJ8bTU58",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
 						"type": "text"
 					}
 				],
@@ -103,7 +103,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/Final_backend/v1/payments/68640be51fd02694e999aa66",
+					"raw": "http://localhost:3000/Final_backend/v1/payments/68645ea9f6a259008c5d92b9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -113,7 +113,7 @@
 						"Final_backend",
 						"v1",
 						"payments",
-						"68640be51fd02694e999aa66"
+						"68645ea9f6a259008c5d92b9"
 					]
 				}
 			},

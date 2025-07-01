@@ -1,0 +1,93 @@
+[{
+  "_id": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "username": "OWNER",
+  "email": "owner@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$AyzEpgHO5Az4Q+EBo2CRvQ$koN8dIiyIligiNDeTid3uSnGxMzuu+2IAfMQvTskuuI",
+  "role": "OWNER_ROLE"
+},
+{
+  "_id": {
+    "$oid": "6864525d0d16c21cc597a431"
+  },
+  "name": "Rafael Baltazar",
+  "username": "rbaltazar",
+  "dpi": "2525789450101",
+  "address": "Abbey Road, Ciudad",
+  "phone": "36770123",
+  "email": "rbaltazar@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$fKX7bTUgjgeQY2iTWitjCA$5z4NskVTus24+4+DnypUZQtoG3WlYcs+W/XXnyjYNT4",
+  "role": "CLIENT_ROLE",
+  "status": false,
+  "createdAt": {
+    "$date": "2025-07-01T21:25:49.182Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:33:14.920Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6864528d0d16c21cc597a438"
+  },
+  "name": "Luis Monzon",
+  "username": "lmonzon",
+  "dpi": "2525032180101",
+  "address": "Sin City, Ciudad",
+  "phone": "36777763",
+  "email": "lmonzon@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$J874xB6yMA9fu8jOsJxfoQ$jfXf6SzGxxCyX5Td/hOTQuWZV+kYQqtUDiho4qvlJk0",
+  "role": "CLIENT_ROLE",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:26:37.753Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:26:37.753Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686453130d16c21cc597a444"
+  },
+  "name": "Joaquin Olatu",
+  "username": "jolatu",
+  "dpi": "2020032180101",
+  "address": "Tangamandapio, Pueblo",
+  "phone": "12347763",
+  "email": "jcena@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$7Hg86MXNoKTIoC07n+6D/w$QkG/HXvMjjZQHFN6BfwONOMRtRmyT5RFP5NCpIIeU0w",
+  "role": "CLIENT_ROLE",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:28:51.760Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:28:51.760Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686453810d16c21cc597a44b"
+  },
+  "name": "Beto Asaber",
+  "username": "basaber",
+  "dpi": "2020123450101",
+  "address": "Cayala, Ciudad",
+  "phone": "12345678",
+  "email": "basaber@example.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$dmyRqoXh/wCGMZTPwHi7bw$HmjupGPErzBsM3tG+8Aq/VWAiRmQzCm5P7rPSoiyLtU",
+  "role": "CLIENT_ROLE",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:30:41.848Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:32:08.957Z"
+  },
+  "__v": 0
+}]

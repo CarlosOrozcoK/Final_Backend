@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "68645db8f6a259008c5d92ac"
+  },
+  "appointment": {
+    "$oid": "686457b60d16c21cc597a476"
+  },
+  "payment": {
+    "$oid": "6864584e0d16c21cc597a492"
+  },
+  "patient": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "totalAmount": 150,
+  "status": "pending",
+  "dueDate": {
+    "$date": "2025-07-05T09:00:00.000Z"
+  },
+  "pdfPath": "C:\\Users\\Fercho\\OneDrive - Fundación Kinal -Alumnos-\\Desktop\\R3\\Final_Backend\\src\\uploads\\invoices\\invoice-686457b60d16c21cc597a476.pdf",
+  "issueDate": {
+    "$date": "2025-07-01T22:14:16.202Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-01T22:14:16.206Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T22:14:16.206Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68645ef6f6a259008c5d92c4"
+  },
+  "appointment": {
+    "$oid": "68645e83f6a259008c5d92b4"
+  },
+  "payment": {
+    "$oid": "68645ea9f6a259008c5d92b9"
+  },
+  "patient": {
+    "$oid": "686453810d16c21cc597a44b"
+  },
+  "totalAmount": 200,
+  "status": "pending",
+  "dueDate": {
+    "$date": "2025-07-28T08:45:00.000Z"
+  },
+  "pdfPath": "C:\\Users\\Fercho\\OneDrive - Fundación Kinal -Alumnos-\\Desktop\\R3\\Final_Backend\\src\\uploads\\invoices\\invoice-68645e83f6a259008c5d92b4.pdf",
+  "issueDate": {
+    "$date": "2025-07-01T22:19:34.912Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-01T22:19:34.913Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T22:19:34.913Z"
+  },
+  "__v": 0
+}]

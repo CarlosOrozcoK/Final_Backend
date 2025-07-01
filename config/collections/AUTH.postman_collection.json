@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "27106ed7-23a3-4f3c-a39d-015ce4eb5ed7",
+		"_postman_id": "9a1a49bb-b816-43e2-95a2-d5e88ecadbaa",
 		"name": "AUTH",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42798822"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"username\": \"OWNER\",\r\n  \"password\": \"OWNER\"\r\n}\r\n",
+					"raw": "{\r\n  \"username\": \"basaber\",\r\n  \"password\": \"password54321\"\r\n} \r\n",
 					"options": {
 						"raw": {
 							"language": "json"

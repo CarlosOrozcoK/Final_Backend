@@ -1,0 +1,144 @@
+[{
+  "_id": {
+    "$oid": "6864584e0d16c21cc597a492"
+  },
+  "appointment": {
+    "$oid": "686457b60d16c21cc597a476"
+  },
+  "user": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "amount": 150,
+  "status": "paid",
+  "method": "card",
+  "transactionId": "txn12345",
+  "paidAt": {
+    "$date": "2025-07-01T21:54:41.156Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-01T21:51:10.916Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:54:41.157Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686458720d16c21cc597a498"
+  },
+  "appointment": {
+    "$oid": "686457c20d16c21cc597a47b"
+  },
+  "user": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "amount": 160,
+  "status": "paid",
+  "method": "cash",
+  "transactionId": "txn123456",
+  "paidAt": {
+    "$date": "2025-07-01T21:54:51.528Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-01T21:51:46.630Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:54:51.528Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686458880d16c21cc597a49e"
+  },
+  "appointment": {
+    "$oid": "686457d40d16c21cc597a480"
+  },
+  "user": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "amount": 200,
+  "status": "pending",
+  "method": "cash",
+  "transactionId": "txn1234567",
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T21:52:08.643Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:52:08.643Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686458a00d16c21cc597a4a4"
+  },
+  "appointment": {
+    "$oid": "686457dc0d16c21cc597a485"
+  },
+  "user": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "amount": 180,
+  "status": "pending",
+  "method": "card",
+  "transactionId": "txn12345678",
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T21:52:32.585Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:52:32.585Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686458b50d16c21cc597a4aa"
+  },
+  "appointment": {
+    "$oid": "686457e70d16c21cc597a48a"
+  },
+  "user": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "amount": 125,
+  "status": "pending",
+  "method": "card",
+  "transactionId": "txn123456789",
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T21:52:53.693Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:52:53.693Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68645ea9f6a259008c5d92b9"
+  },
+  "appointment": {
+    "$oid": "68645e83f6a259008c5d92b4"
+  },
+  "user": {
+    "$oid": "686453810d16c21cc597a44b"
+  },
+  "amount": 200,
+  "status": "paid",
+  "method": "card",
+  "transactionId": "txn123456789",
+  "paidAt": {
+    "$date": "2025-07-01T22:18:38.987Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-01T22:18:17.985Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T22:18:38.988Z"
+  },
+  "__v": 0
+}]

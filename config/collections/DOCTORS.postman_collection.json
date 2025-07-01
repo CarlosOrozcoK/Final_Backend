@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fc19cc4b-dc88-4381-a155-08e7d5c99fbd",
+		"_postman_id": "558e9efc-31f3-4759-8c24-8ea26a0f8982",
 		"name": "DOCTORS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42798822"
@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Dr. Simi\",\r\n  \"phone\": \"555-4321\",\r\n  \"email\": \"drsimi@example.com\",\r\n  \"specialization\": \"General\",\r\n  \"consultationPrice\": 100\r\n}",
+					"raw": "{\r\n    \"name\": \"Dr. Ana Gómez\",\r\n    \"phone\": \"98763214\",\r\n    \"email\": \"ana.gomez@example.com\",\r\n    \"specialization\": \"Cardiología\",\r\n    \"consultationPrice\": 150\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,7 +53,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
 						"type": "text"
 					}
 				],
@@ -89,13 +89,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Dr. Malco Chacon II\",\r\n  \"phone\": \"555-8765\",\r\n  \"email\": \"drmalcochaconii@example.com\",\r\n  \"specialization\": \"Cardiology\",\r\n  \"consultationPrice\": 120\r\n}",
+					"raw": "{\r\n    \"name\": \"Dr. House\",\r\n    \"phone\": \"58794123\",\r\n    \"email\": \"drhouse@example.com\",\r\n    \"specialization\": \"General\",\r\n    \"consultationPrice\": 125\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -103,7 +103,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/Final_backend/v1/doctors/6863fe5212608e69e247e539",
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/6864554b0d16c21cc597a465",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -113,7 +113,7 @@
 						"Final_backend",
 						"v1",
 						"doctors",
-						"6863fe5212608e69e247e539"
+						"6864554b0d16c21cc597a465"
 					]
 				}
 			},
@@ -126,7 +126,7 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODYzZjZmN2VkODgyYzMyZjI3NGIyZmYiLCJpYXQiOjE3NTEzODM2MTcsImV4cCI6MTc1MTM4NzIxN30.swyNgrMf-LDFpZSfC2NRQk1HHj5jEV5nFsvlkxB1zuM",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
 						"type": "text"
 					}
 				],
@@ -140,7 +140,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/Final_backend/v1/doctors/6863fea712608e69e247e541",
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/686454dc0d16c21cc597a455",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -150,7 +150,7 @@
 						"Final_backend",
 						"v1",
 						"doctors",
-						"6863fea712608e69e247e541"
+						"686454dc0d16c21cc597a455"
 					]
 				}
 			},
