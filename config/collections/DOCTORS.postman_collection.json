@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "558e9efc-31f3-4759-8c24-8ea26a0f8982",
+		"name": "DOCTORS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42798822"
+	},
+	"item": [
+		{
+			"name": "createDoctor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dr. Ana Gómez\",\r\n    \"phone\": \"98763214\",\r\n    \"email\": \"ana.gomez@example.com\",\r\n    \"specialization\": \"Cardiología\",\r\n    \"consultationPrice\": 150\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/nuevoDoc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors",
+						"nuevoDoc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDoctor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateDoctor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dr. House\",\r\n    \"phone\": \"58794123\",\r\n    \"email\": \"drhouse@example.com\",\r\n    \"specialization\": \"General\",\r\n    \"consultationPrice\": 125\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/6864554b0d16c21cc597a465",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors",
+						"6864554b0d16c21cc597a465"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteDoctor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dr. Malco Chacon II\",\r\n  \"phone\": \"555-8765\",\r\n  \"email\": \"drmalcochaconii@example.com\",\r\n  \"specialization\": \"Cardiology\",\r\n  \"consultationPrice\": 120\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/doctors/686454dc0d16c21cc597a455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"doctors",
+						"686454dc0d16c21cc597a455"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -20,7 +20,7 @@ export const dbConnection = async () => {
     });
     mongoose.connection.on('open', async () => {
       console.log('MongoDB | Connected to database');
-      await createDefaultOwner();           // ⬅️  sigue igual
+      await createDefaultOwner();           
     });
     mongoose.connection.on('reconnected', () => {
       console.log('MongoDB | Reconnected to MongoDB');
@@ -52,7 +52,7 @@ const createDefaultOwner = async () => {
         username: 'OWNER',
         email: 'owner@example.com',
         password: hashedPassword,
-        role: 'OWNER_ROLE'  // Este campo se guardará sin problema
+        role: 'OWNER_ROLE' 
       };
 
       const result = await usersCollection.insertOne(owner);

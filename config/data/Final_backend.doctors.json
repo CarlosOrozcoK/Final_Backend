@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "686454dc0d16c21cc597a455"
+  },
+  "name": "Dr. Simi",
+  "phone": "555-4321",
+  "email": "drsimi@example.com",
+  "specialization": "General",
+  "role": "DOCTOR_ROLE",
+  "consultationPrice": 100,
+  "status": false,
+  "createdAt": {
+    "$date": "2025-07-01T21:36:28.302Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:45:04.257Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686454fd0d16c21cc597a459"
+  },
+  "name": "Dra. Elena Vargas",
+  "phone": "12325445",
+  "email": "elena.vargas@example.com",
+  "specialization": "Ginecología",
+  "role": "DOCTOR_ROLE",
+  "consultationPrice": 160,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:37:01.346Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:37:01.346Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686455130d16c21cc597a45d"
+  },
+  "name": "Dr. Miguel Torres",
+  "phone": "14725836",
+  "email": "miguel.torres@example.com",
+  "specialization": "Neurología",
+  "role": "DOCTOR_ROLE",
+  "consultationPrice": 200,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:37:23.762Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:37:23.762Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6864552f0d16c21cc597a461"
+  },
+  "name": "Dra. Sofía Rodríguez",
+  "phone": "96385214",
+  "email": "sofia.rodriguez@example.com",
+  "specialization": "Dermatología",
+  "role": "DOCTOR_ROLE",
+  "consultationPrice": 180,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:37:51.740Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:37:51.740Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6864554b0d16c21cc597a465"
+  },
+  "name": "Dr. House",
+  "phone": "58794123",
+  "email": "drhouse@example.com",
+  "specialization": "General",
+  "role": "DOCTOR_ROLE",
+  "consultationPrice": 125,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:38:19.280Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:44:47.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6864555f0d16c21cc597a469"
+  },
+  "name": "Dr. Ana Gómez",
+  "phone": "98763214",
+  "email": "ana.gomez@example.com",
+  "specialization": "Cardiología",
+  "role": "DOCTOR_ROLE",
+  "consultationPrice": 150,
+  "status": true,
+  "createdAt": {
+    "$date": "2025-07-01T21:38:39.423Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T21:38:39.423Z"
+  },
+  "__v": 0
+}]

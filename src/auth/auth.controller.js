@@ -6,7 +6,6 @@ export const login = async (req, res) => {
     try {
         const { username, password } = req.body;
 
-        // Find user by username
         const user = await User.findOne({ username });
 
         if (!user) {
@@ -52,7 +51,6 @@ export const register = async (req, res) => {
             role
         } = req.body;
 
-        // Check if user already exists by username, email or dpi
         const existingUser = await User.findOne({
             $or: [{ username }, { email }, { dpi }]
         });
