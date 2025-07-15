@@ -28,6 +28,10 @@ const appointmentSchema = new mongoose.Schema({
     type: Number,
     required: true,
     default: 0 
+  },
+  paidAt: {    
+    type: Date,
+    default: null
   }
   
 });

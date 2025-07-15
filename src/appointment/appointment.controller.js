@@ -1,6 +1,8 @@
 // src/appointments/appointment.controller.js
+
 import Appointment from './appointment.model.js';
 import Doctor from '../doctors/doctor.model.js';
+import Payment from '../payments/payment.model.js';  
 
 export const createAppointment = async (req, res) => {
   try {
@@ -38,6 +40,7 @@ export const createAppointment = async (req, res) => {
   }
 };
 
+// Listar citas
 export const listAppointments = async (req, res) => {
   try {
     const patientId = req.uid;
@@ -50,5 +53,31 @@ export const listAppointments = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+export const completeAppointment = async (req, res) => {
+  try {
+    const { appointmentId, paymentId } = req.body;
+
+
+    const appointment = await Appointment.findById(appointmentId);
+    if (!appointment) {
+      return res.status(404).json({ message: 'Appointment not found' });
+    }
+
+    const payment = await Payment.findById(paymentId);
+    if (!payment || payment.status !== 'paid') {
+      return res.status(400).json({ message: 'Payment not valid or not paid' });
+    }
+
+    appointment.status = 'completed';
+    appointment.paidAt = new Date(); 
+    await appointment.save();
+
+    res.json({ message: 'Appointment completed and payment registered', appointment });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error completing appointment', error: error.message });
   }
 };

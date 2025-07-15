@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "92f0a938-42e3-4348-93ad-56f3eb6acf26",
+		"name": "INVOICE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42798822"
+	},
+	"item": [
+		{
+			"name": "createInvoice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"appointmentId\": \"68645e83f6a259008c5d92b4\",\r\n  \"paymentId\": \"68645ea9f6a259008c5d92b9\",\r\n  \"dueDate\": \"2025-07-28T08:45:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/invoices/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"invoices",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

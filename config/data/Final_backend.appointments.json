@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "686457b60d16c21cc597a476"
+  },
+  "patient": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "doctor": {
+    "$oid": "6864555f0d16c21cc597a469"
+  },
+  "date": {
+    "$date": "2025-07-05T09:00:00.000Z"
+  },
+  "status": "completed",
+  "price": 150,
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T21:48:38.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686457c20d16c21cc597a47b"
+  },
+  "patient": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "doctor": {
+    "$oid": "686454fd0d16c21cc597a459"
+  },
+  "date": {
+    "$date": "2025-07-10T14:30:00.000Z"
+  },
+  "status": "completed",
+  "price": 160,
+  "paidAt": {
+    "$date": "2025-07-01T21:55:26.040Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-01T21:48:50.954Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686457d40d16c21cc597a480"
+  },
+  "patient": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "doctor": {
+    "$oid": "686455130d16c21cc597a45d"
+  },
+  "date": {
+    "$date": "2025-07-15T11:00:00.000Z"
+  },
+  "status": "completed",
+  "price": 200,
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T21:49:08.004Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686457dc0d16c21cc597a485"
+  },
+  "patient": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "doctor": {
+    "$oid": "6864552f0d16c21cc597a461"
+  },
+  "date": {
+    "$date": "2025-07-22T16:00:00.000Z"
+  },
+  "status": "completed",
+  "price": 180,
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T21:49:16.674Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686457e70d16c21cc597a48a"
+  },
+  "patient": {
+    "$oid": "686452070d16c21cc597a428"
+  },
+  "doctor": {
+    "$oid": "6864554b0d16c21cc597a465"
+  },
+  "date": {
+    "$date": "2025-07-28T08:45:00.000Z"
+  },
+  "status": "completed",
+  "price": 125,
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T21:49:27.887Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68645e83f6a259008c5d92b4"
+  },
+  "patient": {
+    "$oid": "686453810d16c21cc597a44b"
+  },
+  "doctor": {
+    "$oid": "686455130d16c21cc597a45d"
+  },
+  "date": {
+    "$date": "2025-07-28T08:45:00.000Z"
+  },
+  "status": "completed",
+  "price": 200,
+  "paidAt": null,
+  "createdAt": {
+    "$date": "2025-07-01T22:17:39.026Z"
+  },
+  "__v": 0
+}]

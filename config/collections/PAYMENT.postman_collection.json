@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "b52aa10f-6cf8-40b7-8b67-3cbf878bcf7d",
+		"name": "PAYMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42798822"
+	},
+	"item": [
+		{
+			"name": "crearPayment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"appointmentId\": \"68645e83f6a259008c5d92b4\",\r\n  \"amount\": 200,\r\n  \"method\": \"card\",\r\n  \"transactionId\": \"txn123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPayment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"appointmentId\": \"686457dc0d16c21cc597a485\",\r\n  \"amount\": 150,\r\n  \"method\": \"card\",\r\n  \"transactionId\": \"txn12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/payments/686457dc0d16c21cc597a485",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"payments",
+						"686457dc0d16c21cc597a485"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePayment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODY0NTIwNzBkMTZjMjFjYzU5N2E0MjgiLCJpYXQiOjE3NTE0MDUwODksImV4cCI6MTc1MTQwODY4OX0.GVEmRr0_LggKtQQBNYa5nZTvCvXdBKVQFsFCEvp4c80",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"paid\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/Final_backend/v1/payments/68645ea9f6a259008c5d92b9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Final_backend",
+						"v1",
+						"payments",
+						"68645ea9f6a259008c5d92b9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
