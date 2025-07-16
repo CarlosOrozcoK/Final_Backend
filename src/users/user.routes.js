@@ -3,12 +3,15 @@ import {
   crearCliente,
   listarClientes,
   actualizarCliente,
-  eliminarCliente
+  eliminarCliente,
+  obtenerMiPerfil 
 } from '../users/user.controller.js';
 
 import { check } from 'express-validator';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import { validarDPI, validarCorreo, existeUsuarioById } from '../helpers/db-validator.js'; // Renombra según lo desees
+import { validateJWT } from '../middlewares/validate-jwt.js';
+
 
 const router = Router();
 
@@ -29,6 +32,9 @@ router.post(
 );
 
 router.get('/', listarClientes);
+
+router.get('/mi-perfil', validateJWT, obtenerMiPerfil);
+
 
 router.put(
   '/:id',

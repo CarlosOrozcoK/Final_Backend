@@ -14,6 +14,24 @@ export const listarClientes = async (req, res) => {
   }
 };
 
+export const obtenerMiPerfil = async (req, res) => {
+  try {
+    const userId = req.uid;
+
+    const cliente = await User.findById(userId).select('-password');
+
+    if (!cliente || !cliente.status) {
+      return res.status(404).json({ success: false, msg: 'Cliente no encontrado o inactivo' });
+    }
+
+    res.json({ success: true, cliente });
+  } catch (error) {
+    console.error('Error en obtenerMiPerfil:', error);
+    res.status(500).json({ success: false, msg: 'Error al obtener cliente', error: error.message || error });
+  }
+};
+
+
 /* ------------------------------------------------------------------------ */
 /* CREAR (POST /api/clientes)                                               */
 /* ------------------------------------------------------------------------ */
