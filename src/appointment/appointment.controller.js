@@ -45,7 +45,10 @@ export const listAppointments = async (req, res) => {
   try {
     const patientId = req.uid;
 
-    const appointments = await Appointment.find({ patient: patientId })
+    const appointments = await Appointment.find({
+      patient: patientId,
+      status: { $ne: 'cancelled' } // <-- ¡AÑADE ESTA LÍNEA PARA FILTRAR!
+    })
       .populate('doctor', 'name email specialization consultationPrice')
       .sort({ date: 1 });
 
@@ -79,5 +82,37 @@ export const completeAppointment = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error completing appointment', error: error.message });
+  }
+};
+
+export const cancelAppointment = async (req, res) => {
+  console.log('*** Entrando a cancelAppointment ***'); // <-- Añade esto
+  try {
+    const { id } = req.params;
+    const patientId = req.uid;
+
+    console.log('ID de cita a cancelar:', id); // <-- Añade esto
+    console.log('ID de paciente:', patientId); // <-- Añade esto
+    const appointment = await Appointment.findOne({ _id: id, patient: patientId });
+
+    if (!appointment) {
+      return res.status(404).json({ message: 'Cita no encontrada o no tienes permiso para cancelarla.' });
+    }
+
+    console.log('Estado actual de la cita:', appointment.status);
+
+    // 2. Verificar si la cita ya está completada o cancelada
+    if (appointment.status === 'completed' || appointment.status === 'cancelled') {
+      return res.status(400).json({ message: `La cita ya está ${appointment.status}. No se puede cancelar.` });
+    }
+
+    // 3. Cambiar el estado de la cita a 'cancelled' (soft delete)
+    appointment.status = 'cancelled';
+    await appointment.save();
+
+    res.status(200).json({ message: 'Cita cancelada exitosamente.', appointment });
+  } catch (error) {
+    console.error('Error al cancelar la cita:', error);
+    res.status(500).json({ message: 'Error interno del servidor al cancelar la cita.', error: error.message });
   }
 };
