@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createAppointment, listAppointments, completeAppointment, cancelAppointment } from './appointment.controller.js'; // <-- AÑADE cancelAppointment
+import { createAppointment, listAppointments, completeAppointment, cancelAppointment, getAppointmentById  } from './appointment.controller.js'; // <-- AÑADE cancelAppointment
 import { validateJWT } from '../middlewares/validate-jwt.js';
 import { check } from 'express-validator';
 import { existeDoctorById, existeAppointmentById, pagoEsValido } from '../helpers/db-validator.js';
@@ -35,14 +35,25 @@ router.put(
 );
 
 router.delete(
-  '/:id', // Usaremos el ID en los parámetros para la cancelación
+  '/:id', 
   [
-    validateJWT, // Asegúrate de que el usuario esté autenticado
-    check('id', 'ID de la cita inválido').isMongoId(), // Valida que el ID sea un Mongo ID
-    check('id').custom(existeAppointmentById), // Valida que la cita exista
-    validarCampos // Maneja los errores de validación
+    validateJWT, 
+    check('id', 'ID de la cita inválido').isMongoId(), 
+    check('id').custom(existeAppointmentById), 
+    validarCampos 
   ],
   cancelAppointment
+);
+
+router.get(
+  '/:id',
+  [
+    validateJWT,
+    check('id', 'ID de la cita inválido').isMongoId(),
+    check('id').custom(existeAppointmentById),
+    validarCampos
+  ],
+  getAppointmentById
 );
 
 export default router;

@@ -26,9 +26,12 @@ export const createInvoice = async (req, res) => {
     const { appointmentId, paymentId, dueDate } = req.body;
 
     const appointment = await Appointment.findById(appointmentId).populate('doctor');
+    const payment = await Payment.findById(paymentId).populate('user');
 
-    const payment = await Payment.findById(paymentId).populate('user'); 
-    
+    console.log('Payment encontrado:', payment);
+    console.log('Estado del pago:', payment?.status);
+    console.log('Usuario del pago:', payment?.user);
+
     if (!appointment) {
       return res.status(404).json({ success: false, msg: 'Appointment not found' });
     }
@@ -43,16 +46,18 @@ export const createInvoice = async (req, res) => {
     if (!payment.user) {
       return res.status(400).json({ success: false, msg: 'Payment user (patient) not found for this payment.' });
     }
-    const patientId = payment.user._id; 
-    const totalAmount = payment.amount; 
+
+
+    const patientId = payment.user._id;
+    const totalAmount = payment.amount;
 
     const invoiceData = {
       appointment: appointmentId,
       payment: paymentId,
-      patient: patientId, 
+      patient: patientId,
       totalAmount: totalAmount,
-      dueDate: new Date(dueDate), 
-      status: 'pending' 
+      dueDate: new Date(dueDate),
+      status: 'pending'
     };
 
     const invoiceFileName = `invoice-${appointmentId}.pdf`;
@@ -64,10 +69,10 @@ export const createInvoice = async (req, res) => {
     doc.fontSize(20).text('Factura', { align: 'center' });
     doc.moveDown();
     doc.fontSize(12).text(`Paciente: ${payment.user.name || 'N/A'}`);
-    doc.text(`Cita con: ${appointment.doctor?.name || 'N/A'}`); 
-    doc.text(`Fecha de cita: ${new Date(appointment.date).toLocaleString()}`); 
+    doc.text(`Cita con: ${appointment.doctor?.name || 'N/A'}`);
+    doc.text(`Fecha de cita: ${new Date(appointment.date).toLocaleString()}`);
     doc.text(`Monto Total: $${totalAmount}`);
-    doc.text(`Fecha de Vencimiento: ${new Date(dueDate).toLocaleString()}`); 
+    doc.text(`Fecha de Vencimiento: ${new Date(dueDate).toLocaleString()}`);
     doc.text(`Estado: ${invoiceData.status}`);
     doc.moveDown();
     doc.text(`Factura generada en: ${new Date().toLocaleString()}`);
@@ -88,8 +93,8 @@ export const createInvoice = async (req, res) => {
     res.status(500).json({
       success: false,
       msg: 'Error creating invoice',
-      error: error.message, 
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined 
+      error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 };
